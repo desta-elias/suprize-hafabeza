@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For You, My Love</title>
+    <meta
+      name="description"
+      content="A simple romantic page made with love — open the letter, scroll the memories, and feel how much you mean to me."
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <canvas id="hearts" aria-hidden="true"></canvas>
+    <div id="photoHeart" class="photoHeart" aria-hidden="true"></div>
+    <div id="heartMessage" class="heartMessage" aria-hidden="true"></div>
+
+    <main class="page">
+      <header class="hero" role="banner">
+        <div class="hero__copy">
+          <p class="badge" id="todayBadge">Made just for you</p>
+          <h1 class="title">
+            Hey <span class="accent" id="herNameInline">my love</span> —
+            <span class="title__sub">I’ve been wanting to tell you this.</span>
+          </h1>
+          <p class="subtitle">
+            It’s early, but I like you — a lot.
+          </p>
+
+	          <div class="cta">
+	            <button class="btn btn--primary" id="openLetterBtn" type="button">
+	              Open my letter
+	            </button>
+	            <button class="btn btn--ghost" id="revealBtn" type="button">
+	              Reveal my heart
+	            </button>
+	            <button class="btn btn--ghost" id="animBtn" type="button">
+	              Change animation
+	            </button>
+	            <button class="btn btn--ghost" id="changeNamesBtn" type="button">
+	              Names
+	            </button>
+	            <button class="btn btn--ghost" id="musicBtn" type="button">
+	              Tap for a little music
+	            </button>
+	          </div>
+
+          <p class="hint" id="musicHint">
+            Tip: music starts only after a tap (browser rules).
+          </p>
+        </div>
+
+      </header>
+
+	      <footer class="footer">
+	        <p>Goodnight, and sweet thoughts.</p>
+	        <p class="tiny">Made with love by <span id="yourNameInline">me</span>.</p>
+	      </footer>
+	    </main>
+
+    <dialog class="modal" id="letterModal" aria-label="Love letter">
+      <form method="dialog" class="modal__box">
+        <div class="modal__top">
+          <h2 class="modal__title">A letter for you</h2>
+          <button class="iconBtn" value="close" aria-label="Close">
+            ✕
+          </button>
+        </div>
+
+        <div class="letter">
+          <p class="letter__to">To <span id="herNameLetter">my love</span>,</p>
+          <div class="letter__body" id="typedLetter" aria-live="polite"></div>
+          <p class="letter__from">
+            Always yours,<br />
+            <span id="yourNameLetter">me</span>
+          </p>
+        </div>
+
+        <div class="modal__bottom">
+          <button class="btn btn--primary" value="close">Close</button>
+          <button class="btn btn--ghost" id="sparkleBtn" type="button">
+            Send hearts
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="modal" id="namesModal" aria-label="Personalize names">
+      <form method="dialog" class="modal__box">
+        <div class="modal__top">
+          <h2 class="modal__title">Personalize</h2>
+          <button class="iconBtn" value="close" aria-label="Close">
+            ✕
+          </button>
+        </div>
+
+        <div class="formGrid">
+          <label class="field">
+            <span>Her name</span>
+            <input id="herNameInput" autocomplete="off" placeholder="e.g., Sara" />
+          </label>
+          <label class="field">
+            <span>Your name</span>
+            <input
+              id="yourNameInput"
+              autocomplete="off"
+              placeholder="e.g., Daniel"
+            />
+          </label>
+        </div>
+
+        <div class="modal__bottom">
+          <button class="btn btn--primary" id="saveNamesBtn" value="close">
+            Save
+          </button>
+          <button class="btn btn--ghost" value="close">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="./scrpit.js"></script>
+  </body>
+</html>
